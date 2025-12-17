@@ -1,0 +1,58 @@
+# BSD* licenses have slight variations, and giving each one of them a
+# different name is not very useful.
+source: dep5-copyright-license-name-not-unique *
+
+# Ignore JSON "do no evil" license in a test file for a subsystem that
+# is not part of the browser.
+source: license-problem-json-evil [dom/system/gonk/tests/marionette/ril_jshint/jshint.js]
+
+# Ignore missing sources errors for test files (some of which are bogus,
+# even).
+source: source-is-missing [*/tests/*]
+source: source-is-missing [*/test/*]
+source: source-is-missing [js/src/jit-test/*]
+source: source-is-missing [js/src/octane/*]
+source: source-is-missing [testing/*]
+source: source-is-missing [*/crashtests/*]
+source: source-is-missing [*/reftests/*]
+source: source-is-missing [third_party/webkit/PerformanceTests/*]
+
+# Real source files with really long lines
+source: source-is-missing [browser/app/profile/firefox.js]
+source: source-is-missing [modules/libpref/init/all.js]
+source: source-is-missing [toolkit/content/aboutLogging.js]
+
+# Ignore missing sources errors for documentation
+source: source-is-missing [modules/freetype2/docs/*]
+source: source-is-missing [parser/*.html]
+source: source-is-missing [security/nss/doc/*]
+
+# The source for these is in toolkit/components/translation/cld2 with
+# an accompanying Makefile. It requires emscripten to build, which is
+# not available on all architectures, so this would require packaging
+# circumvolutions.
+source: source-is-missing [toolkit/components/translation/cld2/cld-worker.js]
+
+# Vendored Windows import libraries.
+source: unpack-message-for-orig * ar failed for */third_party/rust/winapi-*-pc-windows-gnu/lib/*.a
+
+# Vendored python modules.
+source: source-contains-prebuilt-windows-binary [third_party/python/setuptools/setuptools/*.exe]
+source: source-contains-prebuilt-windows-binary [third_party/python/pip/pip/_vendor/distlib/*.exe]
+
+# Files for the Windows installer.
+source: source-contains-prebuilt-windows-binary [other-licenses/nsis/*]
+source: source-contains-prebuilt-windows-binary [other-licenses/7zstub/*]
+
+# Test files
+source: source-contains-prebuilt-windows-binary [netwerk/test/unit/data/signed_win.exe]
+source: source-contains-prebuilt-windows-binary [toolkit/*/test/unit/*]
+source: source-contains-prebuilt-windows-binary [toolkit/*/tests/*]
+source: source-contains-prebuilt-windows-binary [third_party/rust/libloading/tests/*]
+source: elf-error * [testing/web-platform/tests/tools/third_party/packaging/tests/manylinux/*]
+
+# Vendored but unused pre-built build-time tools.
+source: source-contains-prebuilt-windows-binary [toolkit/crashreporter/google-breakpad/src/tools/windows/binaries/*]
+
+# Vendored but unused.
+source: source-contains-prebuilt-windows-binary [third_party/libwebrtc/data/voice_engine/stereo_rtp_files/rtpplay.exe]

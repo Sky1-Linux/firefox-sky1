@@ -1,0 +1,18 @@
+From: Mike Hommey <mh@glandium.org>
+Date: Wed, 5 Mar 2025 07:16:17 +0900
+Subject: Disable format-security warning when disabling format warning
+
+---
+ js/src/xsum/moz.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/js/src/xsum/moz.build b/js/src/xsum/moz.build
+index dc7a4f2..30f64cd 100644
+--- a/js/src/xsum/moz.build
++++ b/js/src/xsum/moz.build
+@@ -17,4 +17,4 @@ SOURCES += [
+ ]
+ 
+ # Suppress warnings in third-party code.
+-SOURCES['xsum.cpp'].flags += ['-Wno-implicit-fallthrough', '-Wno-format', '-Wno-unused-value']
++SOURCES['xsum.cpp'].flags += ['-Wno-implicit-fallthrough', '-Wno-format', '-Wno-format-security', '-Wno-unused-value']

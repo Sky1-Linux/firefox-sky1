@@ -1,0 +1,21 @@
+From: Mike Hommey <mh@glandium.org>
+Date: Wed, 24 Jan 2024 08:48:37 +0900
+Subject: Adjust our gfx/skia/moz.build patch to upstream changes
+
+---
+ gfx/skia/moz.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gfx/skia/moz.build b/gfx/skia/moz.build
+index d46a7a7..f19f1c3 100644
+--- a/gfx/skia/moz.build
++++ b/gfx/skia/moz.build
+@@ -380,7 +380,7 @@ UNIFIED_SOURCES += [
+ ]
+ 
+ # Work around https://gcc.gnu.org/bugzilla/show_bug.cgi?id=110606
+-if CONFIG['CC_TYPE'] == 'gcc' and CONFIG['CPU_ARCH'] == 'ppc64':
++if CONFIG['CC_TYPE'] == 'gcc' and CONFIG['TARGET_CPU'] == 'ppc64':
+     SOURCES += ['skia/src/sksl/SkSLInliner.cpp']
+ else:
+     UNIFIED_SOURCES += ['skia/src/sksl/SkSLInliner.cpp']

@@ -1,0 +1,27 @@
+# Generated files (from .in templates)
+debian/firefox.1
+debian/firefox.bug-control
+debian/firefox.bug-presubj
+debian/firefox.bug-script
+debian/firefox.desktop
+debian/firefox.dirs
+debian/firefox.install
+debian/firefox.js
+debian/firefox.links
+debian/firefox.lintian-overrides
+debian/firefox.manpages
+debian/firefox.mime
+debian/firefox.mozconfig
+debian/firefox.NEWS
+debian/firefox.postinst
+debian/firefox.prerm
+debian/firefox.README.Debian
+debian/firefox-symbolic.svg
+debian/firefox-dev.links
+debian/control
+debian/noinstall
+debian/watch
+
+# Old history
+debian/changelog.xulrunner
+debian/removed_conffiles

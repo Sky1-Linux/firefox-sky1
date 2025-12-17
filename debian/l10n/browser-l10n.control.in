@@ -1,0 +1,18 @@
+Package: @browser@-l10n-@L10N_LANG@
+Architecture: all
+Section: localization
+Depends: ${misc:Depends},
+         @browser@ (>= ${source:Version}), @browser@ (<< ${source:Version}.1~)
+%ifdef L10N_RECOMMENDS
+Recommends: @L10N_RECOMMENDS@
+%endif
+%if L10N_LANG == bn
+Breaks: @browser@-l10n-bn-in (<< 68), @browser@-l10n-bn-bd (<< 68)
+Replaces: @browser@-l10n-bn-in (<< 68), @browser@-l10n-bn-bd (<< 68)
+Provides: @browser@-l10n-bn-in, @browser@-l10n-bn-bd
+%endif
+Description: @L10N_LANGUAGE@ language package for @Browser@
+ @LONGDESC1@
+ @LONGDESC2@
+ .
+ This package contains the localization of @Browser@ in @L10N_LANGUAGE@.
