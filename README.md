@@ -11,6 +11,7 @@ This repository contains Debian packaging patches for Firefox that enable V4L2-M
 - **Prefer-V4L2-M2M-over-VAAPI-for-hw-decode.patch**: Makes Firefox try V4L2-M2M hardware decoding before falling back to VA-API
 - **Fix-V4L2-M2M-timestamp-handling.patch**: Fixes timestamp handling for V4L2 stateful decoders that don't set proper PTS/duration on output frames
 - **Add-V4L2-M2M-AV1-decoder-support.patch**: Adds av1_v4l2m2m to the list of V4L2-M2M decoders (Firefox only had H264, VP8, VP9, HEVC)
+- **Enable-V4L2-M2M-AV1-hardware-decode-check.patch**: Bypasses VA-API-based gfxVars check for AV1 when V4L2 is enabled
 
 ## Building
 
