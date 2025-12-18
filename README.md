@@ -36,6 +36,14 @@ dpkg-buildpackage -us -uc -b
 
 For incremental rebuilds after patching (2 minutes vs 3.5 hours), see [docs/firefox-incremental-rebuild.md](docs/firefox-incremental-rebuild.md).
 
+## Bundled Configuration
+
+The package includes `/usr/lib/firefox/defaults/pref/sky1.js` with:
+- `media.av1.enabled` = true
+- `media.hardware-video-decoding.force-enabled` = true
+- `media.ffmpeg.vaapi.enabled` = false (use V4L2-M2M directly)
+- `media.ffvpx.enabled` = false (use system FFmpeg)
+
 ## Requirements
 
 - System FFmpeg with V4L2-M2M decoders (ffmpeg-sky1 or similar)

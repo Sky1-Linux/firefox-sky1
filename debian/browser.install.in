@@ -36,6 +36,7 @@ usr/lib/@browser@/libgkcodecs.so
 usr/lib/@browser@/libmozinference.so
 
 usr/lib/@browser@/defaults/pref/channel-prefs.js
+debian/sky1.js usr/lib/@browser@/defaults/pref
 
 usr/lib/@browser@/@browser@ usr/lib/@browser@
 
