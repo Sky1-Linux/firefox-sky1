@@ -93,9 +93,9 @@ Depends: ${shlibs:Depends},
          libnspr4 (>= 2:@NSPR_VERSION@~),
 %endif
 %if USE_SYSTEM_NSS
-         libnss3 (>= 2:@NSS_VERSION@~)
+         libnss3 (>= 2:@NSS_VERSION@~),
 %endif
-Recommends: @LIBAVCODEC@
+         @LIBAVCODEC@
 Suggests: fonts-stix | otf-stix,
           fonts-lmodern,
           libgssapi-krb5-2 | libkrb53,
