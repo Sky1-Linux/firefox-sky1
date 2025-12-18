@@ -17,3 +17,4 @@ debian-hacks/Work-around-GCC-ICE-on-ppc64el.patch
 debian-hacks/Adjust-our-gfx-skia-moz.build-patch-to-upstream-chan.patch
 debian-hacks/Disable-format-security-warning-when-disabling-forma.patch
 debian-hacks/Prefer-V4L2-M2M-over-VAAPI-for-hw-decode.patch
+debian-hacks/Fix-V4L2-M2M-timestamp-handling.patch

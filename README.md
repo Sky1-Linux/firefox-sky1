@@ -6,10 +6,10 @@ Debian packaging for Firefox with V4L2-M2M hardware video decoding prioritized o
 
 This repository contains Debian packaging patches for Firefox that enable V4L2-M2M hardware video decoding on ARM platforms like the CIX Sky1/Orion O6.
 
-## Key Changes
+## Patches
 
-- **V4L2-M2M Priority**: Firefox tries V4L2-M2M hardware decoding before falling back to VA-API
-- **System FFmpeg**: Uses system FFmpeg with V4L2-M2M wrapper decoders (h264_v4l2m2m, hevc_v4l2m2m, vp9_v4l2m2m, av1_v4l2m2m)
+- **Prefer-V4L2-M2M-over-VAAPI-for-hw-decode.patch**: Makes Firefox try V4L2-M2M hardware decoding before falling back to VA-API
+- **Fix-V4L2-M2M-timestamp-handling.patch**: Fixes timestamp handling for V4L2 stateful decoders that don't set proper PTS/duration on output frames
 
 ## Building
 
@@ -32,13 +32,7 @@ dpkg-buildpackage -us -uc -b
 
 ## Incremental Rebuild
 
-If you have an existing build and only need to apply the V4L2-M2M patch:
-
-```bash
-cd firefox-build-dir
-patch -p1 < debian/patches/debian-hacks/Prefer-V4L2-M2M-over-VAAPI-for-hw-decode.patch
-./mach build
-```
+For incremental rebuilds after patching (2 minutes vs 3.5 hours), see [docs/firefox-incremental-rebuild.md](docs/firefox-incremental-rebuild.md).
 
 ## Requirements
 
