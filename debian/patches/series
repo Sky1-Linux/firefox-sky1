@@ -18,3 +18,4 @@ debian-hacks/Adjust-our-gfx-skia-moz.build-patch-to-upstream-chan.patch
 debian-hacks/Disable-format-security-warning-when-disabling-forma.patch
 debian-hacks/Prefer-V4L2-M2M-over-VAAPI-for-hw-decode.patch
 debian-hacks/Fix-V4L2-M2M-timestamp-handling.patch
+debian-hacks/Add-V4L2-M2M-AV1-decoder-support.patch
